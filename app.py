@@ -167,4 +167,5 @@ def generate_recipe_endpoint():
 
 if __name__=="__main__":
     os.environ.setdefault("NUMBA_CACHE_DIR", ".numba_cache")
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 4000))  # Get the port from environment or default to 4000
+    app.run(host="0.0.0.0", port=port)
